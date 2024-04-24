@@ -13,11 +13,11 @@ const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
 
   const [name, setName] = useState('')
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState(Math.floor(Math.random() * (70 - 20 + 1)) + 20) // Generate random price between 20 and 70
   const [image, setImage] = useState('')
   const [brand, setBrand] = useState('')
   const [category, setCategory] = useState('')
-  const [countInStock, setCountInStock] = useState(0)
+  const [countInStock, setCountInStock] = useState(Math.floor(Math.random() * (40 - 10 + 1)) + 10) // Generate random countInStock between 10 and 40
   const [description, setDescription] = useState('')
   const [uploading, setUploading] = useState(false)
 

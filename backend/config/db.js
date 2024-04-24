@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect("mongodb+srv://deployment_user:iZDUyoZiBXr7Omhx@store.zu8iqkv.mongodb.net", {
+    const conn = await mongoose.connect("mongodb+srv://deployment_user:iZDUyoZiBXr7Omhx@store.zu8iqkv.mongodb.net/EchoMart", {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
