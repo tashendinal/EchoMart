@@ -1,7 +1,7 @@
 const products = [
   {
     name: 'Crop Top',
-    image: '/images/f1.jpg',
+    image: '/images/01.jpg',
     description:
       'Five Colors Avaliable',
     brand: 'EchoMart',
