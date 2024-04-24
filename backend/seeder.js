@@ -17,7 +17,7 @@ const importData = async () => {
     await Order.deleteMany()
     await Product.deleteMany()
     await User.deleteMany()
-
+    console.log('Order deleted', users)
     const createdUsers = await User.insertMany(users)
 
     const adminUser = createdUsers[0]._id

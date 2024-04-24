@@ -78,6 +78,7 @@ const createProduct = asyncHandler(async (req, res) => {
 // @route   PUT /api/products/:id
 // @access  Private/Admin
 const updateProduct = asyncHandler(async (req, res) => {
+  
   const {
     name,
     price,
@@ -91,6 +92,7 @@ const updateProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
 
   if (product) {
+    console.log("first update is calling")
     product.name = name
     product.price = price
     product.description = description

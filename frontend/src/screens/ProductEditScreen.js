@@ -53,27 +53,28 @@ const ProductEditScreen = ({ match, history }) => {
   }, [dispatch, history, productId, product, successUpdate])
 
   const uploadFileHandler = async (e) => {
-    const file = e.target.files[0]
-    const formData = new FormData()
-    formData.append('image', file)
-    setUploading(true)
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "u03qtmrk"); // Replace with your Cloudinary upload preset
+    formData.append("cloud_name", "dwlmgckgg"); // Replace with your Cloudinary cloud name
 
     try {
-      const config = {
+      const response = await axios.post("https://api.cloudinary.com/v1_1/dwlmgckgg/image/upload", formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
-      }
+      });
 
-      const { data } = await axios.post('/api/upload', formData, config)
-
-      setImage(data)
-      setUploading(false)
+      console.log("Upload successful", response.data);
+      console.log("Image is : ", response.data.secure_url)
+      setImage(response.data.secure_url); // Assuming you want to store the image URL
+      setUploading(false);
     } catch (error) {
-      console.error(error)
-      setUploading(false)
+      console.error(error);
+      setUploading(false);
     }
-  }
+  };
 
   const submitHandler = (e) => {
     e.preventDefault()
