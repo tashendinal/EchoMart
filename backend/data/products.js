@@ -1,6 +1,6 @@
 const products = [
   {
-    name: 'Crop Top',
+    name: 'wer',
     image: '/images/01.jpg',
     description:
       'Five Colors Avaliable',
