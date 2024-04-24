@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect("mongodb://localhost:27017/store", {
+    const conn = await mongoose.connect("mongodb+srv://deployment_user:iZDUyoZiBXr7Omhx@store.zu8iqkv.mongodb.net", {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
